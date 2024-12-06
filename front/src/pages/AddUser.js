@@ -20,7 +20,7 @@ const handleSubmit = async () => {
         formData.append("name", data.name);
 
         const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/user`, {method:"POST", body:formData,});
-        if(res,ok){
+        if(res.ok){
             setData({name: "", image: "",});
             navigate("/", {replace: true});
         }
